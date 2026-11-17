@@ -10,7 +10,7 @@
 <link rel="icon" href="img/logo-w.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/sourceserif4-rdzen.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/sourcesans3-rdzen.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/w-hero-m-720.webp" imagesrcset="img/w-hero-m-480.webp 480w, img/w-hero-m-720.webp 720w, img/w-hero-m-900.webp 900w" imagesizes="100vw" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/w-hero-m-720.webp" imagesrcset="img/w-hero-m-480.webp 480w, img/w-hero-m-600.webp 600w, img/w-hero-m-720.webp 720w, img/w-hero-m-840.webp 840w" imagesizes="100vw" media="(max-width: 899px)" fetchpriority="high">
 <link rel="preload" as="image" href="img/w-hero-1600.webp" imagesrcset="img/w-hero-1024.webp 1024w, img/w-hero-1600.webp 1600w" imagesizes="100vw" media="(min-width: 900px)" fetchpriority="high">
 <style>@font-face{font-family:"S4";src:url(fonts/sourceserif4-rdzen.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D3,U+00D7,U+00F3,U+2013,U+2014,U+2019,U+201D,U+201E,U+2026}
 @font-face{font-family:"S4";src:url(fonts/sourceserif4-pl.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
@@ -178,7 +178,7 @@ mask:radial-gradient(circle at var(--x) 0,#0000 11px,#000 11.6px) top/100% 51% n
 .trasa{display:grid;gap:22px;margin-top:28px}
 .trasa h3{margin-bottom:6px}
 .trasa p{color:var(--t2)}
-.mapa{position:relative;min-height:380px;height:100%;background:var(--sz) url(img/mapa-900.webp) center/cover no-repeat;border:1px solid var(--sz2)}
+.mapa{position:relative;min-height:380px;height:100%;background:var(--sz) center/cover no-repeat;border:1px solid var(--sz2)}
 .mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .mapa .adr{position:absolute;left:14px;bottom:14px;background:#fff;padding:12px 16px;box-shadow:0 6px 18px rgba(8,47,87,.18);font-size:.98rem;line-height:1.4;z-index:2}
 /* patroni */
@@ -277,7 +277,7 @@ mask:radial-gradient(circle at var(--x) 0,#0000 11px,#000 11.6px) top/100% 51% n
 <main id="tresc">
 <section class="hero perf-dol" style="--nast:#fff">
   <picture>
-    <source media="(max-width: 899px)" srcset="img/w-hero-m-480.webp 480w, img/w-hero-m-720.webp 720w, img/w-hero-m-900.webp 900w" sizes="100vw">
+    <source media="(max-width: 899px)" srcset="img/w-hero-m-480.webp 480w, img/w-hero-m-600.webp 600w, img/w-hero-m-720.webp 720w, img/w-hero-m-840.webp 840w" sizes="100vw">
     <img src="img/w-hero-1600.webp" srcset="img/w-hero-1024.webp 1024w, img/w-hero-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Hala Areny Ursynów pełna stołów wystawców i zwiedzających podczas XIV edycji giełdy" fetchpriority="high">
   </picture>
   <div class="tlo"></div>
@@ -435,7 +435,7 @@ d.querySelectorAll('[data-pas]').forEach(function(w){
  function st(){if(!l)return;l.disabled=s.scrollLeft<4;r.disabled=s.scrollLeft+s.clientWidth>=s.scrollWidth-4}
  function krok(k){var a=s.querySelector('a');var g=a?a.getBoundingClientRect().width+parseFloat(getComputedStyle(s).columnGap||16):s.clientWidth;s.scrollBy({left:k*g,behavior:'smooth'})}
  if(l){l.onclick=function(){krok(-1)};r.onclick=function(){krok(1)}}
- s.addEventListener('scroll',st,{passive:true});st();addEventListener('resize',st);
+ s.addEventListener('scroll',function(){requestAnimationFrame(st)},{passive:true});if('IntersectionObserver'in window){new IntersectionObserver(function(e){if(e[0].isIntersecting)st()}).observe(w)}addEventListener('resize',function(){requestAnimationFrame(st)});
  s.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;mv=0;sx=e.clientX;sl=s.scrollLeft});
  addEventListener('pointermove',function(e){if(!dn)return;var dx=e.clientX-sx;mv=Math.max(mv,Math.abs(dx));if(mv>5){s.classList.add('ciag');s.scrollLeft=sl-dx}});
  addEventListener('pointerup',function(){if(!dn)return;dn=false;s.classList.remove('ciag');var a=s.querySelector('a');if(a&&mv>5){var g=a.getBoundingClientRect().width+16;s.scrollTo({left:Math.round(s.scrollLeft/g)*g,behavior:'smooth'})}});
@@ -463,7 +463,7 @@ d.addEventListener('click',function(e){var a=e.target.closest('a[data-lb]');if(!
  lista=[].slice.call(d.querySelectorAll('a[data-lb="'+a.dataset.lb+'"]'));i=lista.indexOf(a);pokaz();lb.classList.add('otw');d.body.style.overflow='hidden';lb.querySelector('.zam').focus()});
 /* mapa przy przewinieciu */
 var mp=d.querySelector('.mapa[data-src]');
-if(mp&&'IntersectionObserver'in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){var f=d.createElement('iframe');f.src=mp.dataset.src;f.title='Mapa dojazdu do Areny Ursynów';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';mp.appendChild(f);io.disconnect()}},{rootMargin:'300px'});io.observe(mp)}
+if(mp&&'IntersectionObserver'in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){if(mp.dataset.bg)mp.style.backgroundImage='url('+mp.dataset.bg+')';var f=d.createElement('iframe');f.src=mp.dataset.src;f.title='Mapa dojazdu do Areny Ursynów';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';mp.appendChild(f);io.disconnect()}},{rootMargin:'300px'});io.observe(mp)}
 /* formularz pokazowy */
 d.querySelectorAll('form.form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var o=f.querySelector('.ok');if(o)o.textContent='To podgląd strony - formularz nie wysyła jeszcze wiadomości. W docelowej wersji zgłoszenie trafi na gielda@kolekcjonujemy.com.'})});
 })();
