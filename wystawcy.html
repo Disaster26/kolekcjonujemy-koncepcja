@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dla wystawców - Warszawska Giełda Kolekcjonerska | koncepcja strony</title>
+<meta name="description" content="Stoły, place i stoiska targowe na Warszawskiej Giełdzie Kolekcjonerskiej w Arenie Ursynów. Cennik, plan hali, regulamin i zgłoszenie.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0D4A87">
+<link rel="icon" href="img/logo-w.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/sourceserif4-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sourcesans3-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/w-hero-m-720.webp" imagesrcset="img/w-hero-m-480.webp 480w, img/w-hero-m-720.webp 720w, img/w-hero-m-900.webp 900w" imagesizes="100vw" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/w-hero-1600.webp" imagesrcset="img/w-hero-1024.webp 1024w, img/w-hero-1600.webp 1600w" imagesizes="100vw" media="(min-width: 900px)" fetchpriority="high">
+<style>@font-face{font-family:"S4";src:url(fonts/sourceserif4-rdzen.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D3,U+00D7,U+00F3,U+2013,U+2014,U+2019,U+201D,U+201E,U+2026}
+@font-face{font-family:"S4";src:url(fonts/sourceserif4-pl.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"SS3";src:url(fonts/sourcesans3-rdzen.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D3,U+00D7,U+00F3,U+2013,U+2014,U+2019,U+201D,U+201E,U+2026}
+@font-face{font-family:"SS3";src:url(fonts/sourcesans3-pl.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--g:#0D4A87;--gd:#082F57;--gn:#061F3B;--sz:#EEF2F7;--sz2:#DCE4EE;--t:#14202E;--t2:#4A5869;--w:#fff;--hdr:64px;
+--wrap:min(92vw,1680px);--serif:"S4",Georgia,"Times New Roman",serif;--sans:"SS3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--t);font:400 1.0625rem/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--g)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;margin:0;letter-spacing:-.01em;color:inherit}
+h2{font-size:clamp(1.9rem,1.2rem + 2.2vw,3.4rem)}
+h3{font-size:clamp(1.2rem,1rem + .5vw,1.5rem)}
+p{margin:0}
+.wrap{width:var(--wrap);margin-inline:auto}
+.lead{font-size:clamp(1.05rem,.98rem + .3vw,1.25rem);color:var(--t2);max-width:62ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{position:relative}
+.sec{padding:clamp(64px,8vw,128px) 0}
+.szary{background:var(--sz)}
+.ciemny{background:var(--gd);color:#fff}
+.ciemny .lead{color:#C9D6E6}
+.glowa{display:grid;gap:18px;margin-bottom:clamp(32px,4vw,56px)}
+@media(min-width:1100px){.glowa.dwie{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:48px}}
+/* przyciski */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 26px;border:2px solid var(--g);background:var(--g);color:#fff;font:600 1.0625rem/1 var(--sans);text-decoration:none;border-radius:3px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--gd);border-color:var(--gd)}
+.btn.jasny{background:#fff;border-color:#fff;color:var(--gd)}
+.btn.jasny:hover{background:var(--sz);border-color:var(--sz)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:focus-visible,.nav a:focus-visible{outline:3px solid #7FB2E8;outline-offset:3px}
+/* naglowek */
+.hdr{position:fixed;inset:0 0 auto 0;height:var(--hdr);background:#fff;z-index:50;border-bottom:1px solid var(--sz2)}
+.hdr .wrap{height:100%;display:flex;align-items:center;gap:20px}
+.marka{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gd);flex:none}
+.marka img{width:44px;height:auto}
+.marka span{font:700 1.02rem/1.08 var(--serif);letter-spacing:-.005em}
+.nav{display:none;margin-left:auto;align-items:center;gap:clamp(14px,1.4vw,30px)}
+.nav a{color:var(--t);text-decoration:none;font-weight:600;font-size:1rem;padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a:hover{color:var(--g)}
+.nav a[aria-current]{color:var(--g);border-bottom-color:var(--g)}
+.nav .btn{min-height:44px;padding:0 20px;color:#fff;border-bottom:2px solid var(--g)}
+.nav .btn[aria-current]{color:#fff}
+.tel-ikona,.burger{margin-left:auto;width:44px;height:44px;display:grid;place-items:center;color:var(--gd);background:none;border:0;padding:0;cursor:pointer}
+.burger{margin-left:0}
+.tel-ikona svg,.burger svg{width:24px;height:24px}
+@media(min-width:1180px){.nav{display:flex}.tel-ikona,.burger{display:none}.hdr .marka span{font-size:1.1rem}}
+@media(max-width:1179px){:root{--hdr:60px}.marka img{width:38px}.marka span{font-size:.95rem}}
+.panel{position:fixed;inset:var(--hdr) 0 0 0;background:#fff;z-index:49;padding:20px 6vw 32px;display:none;overflow:auto}
+.panel.otw{display:block}
+.panel a{display:block;padding:14px 0;border-bottom:1px solid var(--sz2);font:600 1.25rem/1.3 var(--serif);color:var(--gd);text-decoration:none}
+.panel a[aria-current]{color:var(--g);text-decoration:underline;text-underline-offset:5px}
+.panel .btn{display:flex;margin-top:22px;width:100%;font-family:var(--sans);font-size:1.0625rem;color:#fff;border-bottom:2px solid var(--g)}
+.panel p{margin-top:18px;color:var(--t2)}
+/* perforacja - motyw z logo */
+.perf-dol::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:8px;z-index:3;background:radial-gradient(circle at 50% 100%,var(--nast,#fff) 7px,transparent 7.6px) 0 100%/20px 16px repeat-x}
+.perf-gora::before{content:"";position:absolute;left:0;right:0;top:-1px;height:8px;z-index:3;background:radial-gradient(circle at 50% 0,var(--pop,#fff) 7px,transparent 7.6px) 0 0/20px 16px repeat-x}
+.znaczek{--r:5px;--d:15px;background:#fff;padding:13px;-webkit-mask:radial-gradient(circle,#0000 var(--r),#000 calc(var(--r) + .6px)) calc(var(--d)/-2) calc(var(--d)/-2)/var(--d) var(--d) round,linear-gradient(#000 0 0) 50%/calc(100% - var(--d) + 1px) calc(100% - var(--d) + 1px) no-repeat;mask:radial-gradient(circle,#0000 var(--r),#000 calc(var(--r) + .6px)) calc(var(--d)/-2) calc(var(--d)/-2)/var(--d) var(--d) round,linear-gradient(#000 0 0) 50%/calc(100% - var(--d) + 1px) calc(100% - var(--d) + 1px) no-repeat}
+.cien{filter:drop-shadow(0 6px 14px rgba(8,47,87,.13)) drop-shadow(0 1px 2px rgba(8,47,87,.12))}
+/* hero */
+.hero{position:relative;margin-top:var(--hdr);min-height:calc(100svh - var(--hdr));display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:var(--gn);overflow:hidden}
+.hero picture,.hero .tlo{position:absolute;inset:0}
+.hero picture img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero .tlo{background:linear-gradient(0deg,rgba(6,31,59,.94) 0%,rgba(6,31,59,.78) 34%,rgba(6,31,59,.25) 62%,rgba(6,31,59,0) 80%)}
+.hero-in{position:relative;z-index:2;width:var(--wrap);margin:0 auto;padding:120px 0 clamp(40px,6vh,72px)}
+.hero h1{font-size:clamp(2.1rem,1.15rem + 3.9vw,5.4rem);max-width:13ch;text-wrap:balance}
+.hero .kiedy{margin-top:16px;font:600 clamp(1.05rem,.98rem + .35vw,1.3rem)/1.4 var(--sans);color:#fff}
+.hero .kiedy span{white-space:nowrap}
+.hero .opis{margin-top:10px;font-size:clamp(1rem,.95rem + .25vw,1.2rem);line-height:1.5;color:#D6E1EE;max-width:52ch}
+.hero .btn{margin-top:26px}
+@media(min-width:900px){.hero h1{max-width:17ch}.hero .tlo{background:linear-gradient(0deg,rgba(6,31,59,.9) 0%,rgba(6,31,59,.55) 38%,rgba(6,31,59,0) 70%),linear-gradient(90deg,rgba(6,31,59,.6) 0%,rgba(6,31,59,0) 60%)}}
+@media(max-width:899px){.hero picture img{object-position:50% 20%}.hero-in{padding-top:60px}}
+@media(max-height:700px) and (max-width:899px){.hero h1{font-size:clamp(1.9rem,8.4vw,2.3rem)}.hero .opis{font-size:.98rem}.hero .kiedy{margin-top:12px}.hero .btn{margin-top:24px}.hero-in{padding-bottom:34px}}
+/* edycje = seria znaczkow */
+.seria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,28px)}
+.ed{display:block}
+.ed .pole{border:2px solid var(--g);padding:clamp(12px,1.6vw,26px) clamp(10px,1.4vw,24px);height:100%;display:flex;flex-direction:column;gap:6px;color:var(--gd)}
+.ed .nr{font:700 clamp(2rem,1.2rem + 3vw,4.4rem)/1 var(--serif);color:var(--g)}
+.ed .dt{font:700 clamp(1rem,.85rem + .6vw,1.5rem)/1.2 var(--serif)}
+.ed .dz{font-size:clamp(.85rem,.8rem + .2vw,1rem);color:var(--t2)}
+.ed.pierwsza .pole{background:var(--g);color:#fff;border-color:var(--g)}
+.ed.pierwsza .nr{color:#fff}.ed.pierwsza .dz{color:#C9D6E6}
+.edycje-info{display:grid;gap:12px;margin-top:clamp(28px,3vw,44px);color:var(--t2)}
+.edycje-info b{color:var(--t)}
+@media(min-width:1100px){.edycje{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,5vw,96px);align-items:center}.edycje .glowa{margin:0}}
+@media(max-width:560px){.seria{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.seria .pierwsza{grid-column:1/-1}.seria .pierwsza .pole{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:14px}.seria .pierwsza .dz{flex-basis:100%}.ed .dt{font-size:1.1rem}.znaczek.ed{--r:4px;--d:12px;padding:10px}.ed .pole{padding:10px 8px}}
+/* asortyment */
+.siatka-zn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,26px)}
+@media(max-width:699px){.kz .fot{aspect-ratio:4/5}}
+@media(min-width:700px){.siatka-zn{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px){.siatka-zn{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1500px){.siatka-zn{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.kz{display:block;text-decoration:none;color:var(--gd);transition:transform .25s}
+.kz:hover{transform:translateY(-3px) rotate(-.6deg)}
+.kz .fot{display:block;aspect-ratio:3/4;overflow:hidden;background:var(--sz)}
+.kz img{width:100%;height:100%;object-fit:cover}
+.kz .nz{display:block;padding:10px 2px 2px;font:700 clamp(1rem,.92rem + .3vw,1.2rem)/1.2 var(--serif)}
+.reszta{margin-top:clamp(28px,3vw,44px);color:var(--t2);max-width:110ch}
+.reszta b{color:var(--t)}
+/* bilety */
+.bilety{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.bilety{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1600px){.bilety{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.bil{--x:calc(100% - 104px);position:relative;display:grid;grid-template-columns:minmax(0,1fr) 104px;background:#fff;color:var(--gd);min-height:136px;
+-webkit-mask:radial-gradient(circle at var(--x) 0,#0000 11px,#000 11.6px) top/100% 51% no-repeat,radial-gradient(circle at var(--x) 100%,#0000 11px,#000 11.6px) bottom/100% 51% no-repeat;
+mask:radial-gradient(circle at var(--x) 0,#0000 11px,#000 11.6px) top/100% 51% no-repeat,radial-gradient(circle at var(--x) 100%,#0000 11px,#000 11.6px) bottom/100% 51% no-repeat}
+.bil .o{padding:20px 18px 18px 22px;display:flex;flex-direction:column;gap:6px}
+.bil h3{font-size:1.35rem}
+.bil .o p{color:var(--t2);font-size:.98rem;line-height:1.45}
+.bil .c{display:grid;place-items:center;text-align:center;background-image:radial-gradient(circle,var(--gd) 2.2px,transparent 2.8px);background-size:4px 12px;background-repeat:repeat-y;background-position:0 6px;padding:10px 8px 10px 14px}
+.bil .c b{font:700 2.1rem/1 var(--serif);color:var(--g)}
+.bil .c small{display:block;font-size:.85rem;color:var(--t2);margin-top:4px}
+.bil.wyr{background:#DDEBFA}
+.wizyta-dol{display:grid;gap:28px;margin-top:clamp(36px,4vw,56px)}
+.wizyta-dol p{color:#C9D6E6}
+.wizyta-dol b{color:#fff;font-weight:600}
+@media(min-width:900px){.wizyta-dol{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}}
+.wizyta-dol h3{margin-bottom:8px;color:#fff}
+/* wystawcy skrot */
+.wyst{display:grid;gap:clamp(32px,4vw,72px)}
+@media(min-width:1100px){.wyst{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:start}}
+.cennik{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--sz2)}
+.cennik li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--sz2)}
+.cennik li span{color:var(--t)}
+.cennik li small{display:block;color:var(--t2);font-size:.92rem}
+.cennik li b{font:700 1.3rem/1 var(--serif);color:var(--g);white-space:nowrap}
+.przypis{margin-top:14px;color:var(--t2);font-size:.95rem}
+.wyst .btn{margin-top:28px}
+.plan{display:block;text-decoration:none}
+.plan img{width:100%}
+@media(min-width:1100px){.wyst .plan,.dwie-k .plan{max-width:600px;justify-self:end;width:100%}}
+.plan figcaption{padding:10px 2px 0;color:var(--t2);font-size:.95rem}
+/* pas zdjec */
+.pas-w{width:min(calc(100vw - 2*clamp(16px,3vw,56px)),1840px);margin-inline:auto;position:relative}
+.pas{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/1.15);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab}
+.pas::-webkit-scrollbar{display:none}
+.pas.ciag{cursor:grabbing;scroll-snap-type:none}
+@media(min-width:700px){.pas{grid-auto-columns:calc((100% - 2*16px)/2.3)}}
+@media(min-width:1280px){.pas{grid-auto-columns:calc((100% - 2*20px)/3);gap:20px}}
+@media(min-width:1700px){.pas{grid-auto-columns:calc((100% - 3*20px)/4)}}
+.pas a{scroll-snap-align:start;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--sz)}
+.pas img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pas a:hover img{transform:scale(1.03)}
+.strz{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+.strz button{width:48px;height:48px;border:2px solid var(--g);background:#fff;color:var(--g);display:grid;place-items:center;cursor:pointer;border-radius:3px}
+.strz button:disabled{opacity:.3;cursor:default}
+.strz svg{width:20px;height:20px}
+.edycje-lista{margin-top:28px;color:var(--t2);line-height:2}
+.edycje-lista a{margin-right:14px;white-space:nowrap;font-weight:600}
+/* informator */
+.pas.okl{grid-auto-columns:calc((100% - 2*16px)/2.4)}
+@media(min-width:700px){.pas.okl{grid-auto-columns:calc((100% - 4*16px)/4.4)}}
+@media(min-width:1280px){.pas.okl{grid-auto-columns:calc((100% - 5*20px)/6)}}
+@media(min-width:1700px){.pas.okl{grid-auto-columns:calc((100% - 7*20px)/8)}}
+.pas.okl a{aspect-ratio:auto;background:none;overflow:visible}
+.pas.okl a{text-decoration:none}
+.pas.okl .fot{display:block;aspect-ratio:566/802;overflow:hidden;box-shadow:0 8px 20px rgba(8,47,87,.16)}
+.pas.okl .fot img{height:100%}
+.pas.okl span{display:block;padding-top:10px;color:var(--t);font-weight:600;font-size:.95rem;line-height:1.3}
+/* dojazd */
+.dojazd{display:grid;gap:clamp(28px,4vw,64px)}
+@media(min-width:1000px){.dojazd{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.trasa{display:grid;gap:22px;margin-top:28px}
+.trasa h3{margin-bottom:6px}
+.trasa p{color:var(--t2)}
+.mapa{position:relative;min-height:380px;height:100%;background:var(--sz) url(img/mapa-900.webp) center/cover no-repeat;border:1px solid var(--sz2)}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa .adr{position:absolute;left:14px;bottom:14px;background:#fff;padding:12px 16px;box-shadow:0 6px 18px rgba(8,47,87,.18);font-size:.98rem;line-height:1.4;z-index:2}
+/* patroni */
+.patroni{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(min-width:700px){.patroni{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1280px){.patroni{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.patroni div{background:#fff;display:grid;place-items:center;padding:16px;aspect-ratio:16/9;border:1px solid var(--sz2)}
+.patroni img{max-height:76px;width:auto;object-fit:contain}
+.patroni-g{display:grid;gap:10px;margin-bottom:28px;color:var(--t2)}
+.patroni-g b{color:var(--t)}
+/* kontakt */
+.kontakt{display:grid;gap:clamp(32px,4vw,72px);grid-template-columns:minmax(0,1fr)}
+.dane a{overflow-wrap:anywhere}
+@media(min-width:1000px){.kontakt{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.dane{display:grid;gap:18px;margin-top:28px}
+.dane a.duzy{font:700 clamp(1.5rem,1.2rem + 1vw,2.2rem)/1.1 var(--serif);color:var(--gd);text-decoration:none}
+.dane p{color:var(--t2)}
+.form{background:#fff;padding:clamp(20px,3vw,40px);display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:700px){.form{grid-template-columns:repeat(2,minmax(0,1fr))}.form .pel{grid-column:1/-1}}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.95rem;color:var(--t)}
+.form input,.form select,.form textarea{font:400 1rem/1.4 var(--sans);padding:12px 14px;border:1.5px solid #B9C6D6;border-radius:3px;background:#fff;color:var(--t);width:100%;min-width:0}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(13,74,135,.15)}
+.form .btn{justify-self:start}
+.form .ok{color:var(--g);font-weight:600}
+/* stopka */
+.stopka{background:var(--gn);color:#AFC0D4;padding:56px 0 28px;font-size:.98rem;position:relative}
+.stopka .wrap{display:grid;gap:28px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.stopka .m{grid-column:1/-1;display:flex;gap:14px;align-items:center;color:#fff}
+.stopka .m img{width:42px}
+.stopka .m span{font:700 1.15rem/1.1 var(--serif)}
+.stopka h3{font:700 1rem/1.3 var(--sans);color:#fff;margin-bottom:10px}
+.stopka a{color:#D6E1EE;text-decoration:none}
+.stopka a:hover{color:#fff;text-decoration:underline}
+.stopka ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.stopka .dol{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:.92rem}
+@media(min-width:900px){.stopka .wrap{grid-template-columns:1.3fr 1fr 1fr 1fr}.stopka .m{grid-column:auto;align-items:flex-start}}
+/* pasek mobilny */
+.mob{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--sz2);transform:translateY(110%);transition:transform .25s}
+.mob.widac{transform:none}
+.mob .btn{min-height:46px;padding:0 10px;font-size:1rem}
+.mob .btn.obw{background:#fff;color:var(--g)}
+@media(min-width:1000px){.mob{display:none}}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(4,18,34,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
+.lb.otw{display:flex}
+.lb img{max-width:min(94vw,1500px);max-height:84svh;width:auto;height:auto;object-fit:contain;user-select:none}
+.lb .pod{position:absolute;left:0;right:0;bottom:0;padding:14px 72px;color:#DCE5F0;text-align:center;font-size:.98rem}
+.lb button{position:absolute;width:52px;height:52px;border:0;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;border-radius:3px}
+.lb button:hover{background:rgba(255,255,255,.2)}
+.lb button svg{width:24px;height:24px}
+.lb .zam{top:12px;right:12px}.lb .pop{left:12px;top:50%;margin-top:-26px}.lb .nas{right:12px;top:50%;margin-top:-26px}
+@media(max-width:700px){.lb .pop,.lb .nas{top:auto;bottom:6px;margin:0}.lb .pod{padding:14px 70px 22px}}
+.podglad{background:var(--g);color:#fff;text-align:center;font-size:.9rem;padding:8px 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(max-width:420px){.bil{--x:calc(100% - 92px);grid-template-columns:minmax(0,1fr) 92px}.bil .o{padding:18px 12px 16px 18px}}
+
+.typy{display:grid;gap:clamp(14px,1.8vw,28px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.typ .pole{border:2px solid var(--g);padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;gap:10px;height:100%}
+.typ .lit{font:700 1rem/1 var(--sans);color:#fff;background:var(--g);width:34px;height:34px;display:grid;place-items:center;border-radius:2px}
+.typ h3{color:var(--gd);font-size:clamp(1.35rem,1.1rem + .7vw,1.8rem)}
+.typ .wym{color:var(--t2)}
+.typ .cena{margin-top:auto;padding-top:14px;font:700 clamp(2rem,1.5rem + 1.4vw,2.9rem)/1 var(--serif);color:var(--g)}
+.typ .cena small{font:600 1rem/1 var(--sans);color:var(--t2);margin-left:6px}
+.typ.wyr .pole{background:var(--g);color:#fff}.typ.wyr h3,.typ.wyr .cena{color:#fff}.typ.wyr .wym,.typ.wyr .cena small{color:#C9D6E6}.typ.wyr .lit{background:#fff;color:var(--g)}
+.dodatki{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 32px;color:var(--t2)}
+.dodatki b{color:var(--t)}
+.dwie-k{display:grid;gap:clamp(32px,4vw,72px)}
+@media(min-width:1100px){.dwie-k{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+.legenda{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.legenda li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:start}
+.legenda b{font:700 1.05rem/1 var(--sans);color:#fff;background:var(--g);height:40px;display:grid;place-items:center;border-radius:2px}
+.legenda span{color:var(--t2);padding-top:8px}
+.dzien{margin:24px 0 0;padding:0;list-style:none;border-left:3px solid #fff}
+.dzien li{position:relative;padding:0 0 26px 26px}
+.dzien li::before{content:"";position:absolute;left:-9px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--gd);border:3px solid #fff}
+.dzien b{display:block;font:700 1.35rem/1.2 var(--serif);color:#fff}
+.dzien span{color:#C9D6E6}
+.reg details{border-top:1px solid var(--sz2)}
+.reg details:last-child{border-bottom:1px solid var(--sz2)}
+.reg summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font:700 clamp(1.05rem,1rem + .3vw,1.25rem)/1.3 var(--serif);color:var(--gd);position:relative}
+.reg summary::-webkit-details-marker{display:none}
+.reg summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;margin-top:-9px;border-right:2.5px solid var(--g);border-bottom:2.5px solid var(--g);transform:rotate(45deg);transition:transform .2s}
+.reg details[open] summary::after{transform:rotate(-135deg);margin-top:-3px}
+.reg details p{padding:0 0 18px;color:var(--t2);max-width:75ch}
+.rekl{display:grid;gap:clamp(14px,1.8vw,28px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.rekl .pole{border:2px solid var(--g);padding:clamp(18px,2vw,30px);height:100%;display:flex;flex-direction:column;gap:10px}
+.rekl h3{color:var(--gd)}
+.rekl p{color:var(--t2)}
+.rekl .cena{margin-top:auto;font:700 1.9rem/1 var(--serif);color:var(--g)}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap"><a class="marka" href="index.html" aria-label="Warszawska Giełda Kolekcjonerska - strona główna"><img src="img/logo-w.svg" width="44" height="32" alt=""><span>Warszawska Giełda<br>Kolekcjonerska</span></a><nav class="nav" aria-label="Menu główne"><a href="index.html#edycje">Terminy</a><a href="index.html#asortyment">Asortyment</a><a href="index.html#wizyta">Bilety</a><a href="index.html#galeria">Galeria</a><a href="index.html#informator">Informator</a><a href="index.html#dojazd">Dojazd</a><a href="index.html#kontakt">Kontakt</a><a class="btn" href="wystawcy.html" aria-current="page">Dla wystawców</a></nav><a class="tel-ikona" href="tel:+48797710197" aria-label="Zadzwoń: 797 710 197"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M8.5 3.5l3 5-2.2 1.8c1 2.6 2.8 4.4 5.4 5.4l1.8-2.2 5 3-1.3 3.9c-.3.8-1 1.2-1.8 1.1C10.7 20.7 5.3 15.3 4.5 7.6c-.1-.8.3-1.5 1.1-1.8z"/></svg></a><button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="panel"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M4 7h18M4 13h18M4 19h18"/></svg></button></div></header>
+<div class="panel" id="panel"><a href="index.html#edycje">Terminy</a><a href="index.html#asortyment">Asortyment</a><a href="index.html#wizyta">Bilety</a><a href="wystawcy.html" aria-current="page">Dla wystawców</a><a href="index.html#galeria">Galeria</a><a href="index.html#informator">Informator</a><a href="index.html#dojazd">Dojazd</a><a href="index.html#kontakt">Kontakt</a><a class="btn" href="wystawcy.html#zgloszenie">Zarezerwuj stół</a><p>tel. <a href="tel:+48797710197" style="display:inline;border:0;padding:0;font:inherit;color:var(--g)">797 710 197</a></p></div>
+<main id="tresc">
+<section class="hero perf-dol" style="--nast:#fff">
+  <picture>
+    <source media="(max-width: 899px)" srcset="img/w-hero-m-480.webp 480w, img/w-hero-m-720.webp 720w, img/w-hero-m-900.webp 900w" sizes="100vw">
+    <img src="img/w-hero-1600.webp" srcset="img/w-hero-1024.webp 1024w, img/w-hero-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Hala Areny Ursynów pełna stołów wystawców i zwiedzających podczas XIV edycji giełdy" fetchpriority="high">
+  </picture>
+  <div class="tlo"></div>
+  <div class="hero-in">
+    <h1>Wystaw swoje zbiory na giełdzie</h1>
+    <p class="kiedy">XV edycja: <span>niedziela, 24 stycznia 2027</span>, <span>Arena Ursynów</span></p>
+    <p class="opis">Stoły, place i stoiska targowe w hali Areny Ursynów. Stół z krzesłem od 110 zł za cały dzień, w cenie dwie karty wstępu.</p>
+    <a class="btn jasny" href="#zgloszenie">Zarezerwuj miejsce</a>
+  </div>
+</section>
+
+<section class="sec" id="cennik">
+  <div class="wrap">
+    <div class="glowa dwie">
+      <h2>Rodzaje miejsc i ceny</h2>
+      <p class="lead">Ceny brutto za cały dzień giełdy. W cenie każdego miejsca wystawca otrzymuje dwie karty wstępu. Miejsce wyznaczamy w porozumieniu z wystawcą.</p>
+    </div>
+    <div class="typy cien">
+      <div class="typ znaczek"><div class="pole"><span class="lit">A-G</span><h3>Stół wystawowy</h3><p class="wym">Stół 75 x 150 cm z krzesłem. Najczęściej wybierany przez kolekcjonerów indywidualnych.</p><p class="cena">110 zł<small>/ dzień</small></p></div></div>
+      <div class="typ znaczek"><div class="pole"><span class="lit">P</span><h3>Plac wystawowy</h3><p class="wym">Powierzchnia 200 x 300 cm do własnej aranżacji, z możliwością domówienia stołów.</p><p class="cena">160 zł<small>/ dzień</small></p></div></div>
+      <div class="typ znaczek wyr"><div class="pole"><span class="lit">V</span><h3>Stoisko targowe</h3><p class="wym">Zabudowa 200 x 300 cm, lada (dł. 200 cm, wys. 100 cm, szer. 50 cm) i dwa krzesła. Dla firm, galerii i domów aukcyjnych.</p><p class="cena">1550 zł<small>/ dzień</small></p></div></div>
+    </div>
+    <p class="dodatki"><span><b>Dodatkowy stół</b> (75 x 150 cm, przy placu): 25 zł</span><span><b>Dodatkowe krzesło:</b> 8 zł</span></p>
+  </div>
+</section>
+
+<section class="sec szary" id="plan">
+  <div class="wrap dwie-k">
+    <div>
+      <h2>Plan hali</h2>
+      <p class="lead" style="margin-top:18px">Na planie zaznaczone są wszystkie rodzaje miejsc. Przy zgłoszeniu możesz wskazać preferowaną strefę.</p>
+      <ul class="legenda">
+        <li><b>V</b><span>Stoiska targowe - 300 cm szerokości i 200 cm głębokości.</span></li>
+        <li><b>P</b><span>Place wystawowe - 200 cm szerokości i 300 cm głębokości.</span></li>
+        <li><b>A-G</b><span>Stoły wystawowe - 150 cm szerokości i 75 cm głębokości, ustawione w rzędach A, B, C, D, E, F, G.</span></li>
+      </ul>
+    </div>
+    <figure class="plan cien" style="margin:0">
+      <a class="znaczek" href="img/plan-1600.webp" data-lb="plan" data-pod="Plan giełdy: V - stoiska targowe, P - place wystawowe, A-G - stoły" style="display:block"><img src="img/plan-800.webp" width="800" height="1123" loading="lazy" alt="Plan hali z rozmieszczeniem stoisk V, placów P i stołów A-G"></a>
+      <figcaption>Plan z XIII edycji. Kliknij, aby powiększyć.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec ciemny" id="dzien">
+  <div class="wrap dwie-k">
+    <div>
+      <h2>Dzień giełdy</h2>
+      <p class="lead" style="margin-top:18px">Giełda trwa jeden dzień - najbliższe edycje odbędą się w niedziele. Wystawca uczestniczy w pełnych godzinach trwania giełdy.</p>
+      <ol class="dzien">
+        <li><b>8:00-10:00</b><span>Zajęcie i przygotowanie stoiska. Od 8:00 wchodzą też goście z biletem porannym.</span></li>
+        <li><b>10:00-16:00</b><span>Giełda otwarta dla wszystkich zwiedzających.</span></li>
+        <li><b>do 18:00</b><span>Demontaż stoisk.</span></li>
+      </ol>
+    </div>
+    <div class="pas-w" data-pas style="width:100%">
+      <div class="pas" style="grid-auto-columns:calc((100% - 16px)/1.2)">
+<a href="img/g13-27-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-27-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 1"></a>
+<a href="img/g13-28-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-28-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 2"></a>
+<a href="img/g13-31-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-31-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 3"></a>
+<a href="img/g13-08-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-08-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 4"></a>
+<a href="img/g13-35-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-35-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 5"></a>
+<a href="img/g13-09-1400.webp" data-lb="g13" data-pod="XIII edycja, 19 kwietnia 2026"><img src="img/g13-09-900.webp" width="900" height="675" loading="lazy" alt="Wystawcy i goście na XIII edycji giełdy - zdjęcie 6"></a>
+      </div>
+      <div class="strz"><button class="l" aria-label="Poprzednie zdjęcia"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M16 5l-8 8 8 8"/></svg></button><button class="r" aria-label="Następne zdjęcia"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M10 5l8 8-8 8"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reklama">
+  <div class="wrap">
+    <div class="glowa dwie">
+      <h2>Reklama podczas giełdy</h2>
+      <p class="lead">Dwie formy promocji, które działają w dniu giełdy i po niej. Zgłoszenia przyjmujemy mailowo na gielda@kolekcjonujemy.com.</p>
+    </div>
+    <div class="rekl cien">
+      <div class="znaczek"><div class="pole"><h3>Ekran LED w hali</h3><p>Ekran 6 x 3,5 m w centralnej części hali. Reklama 20 s, wyświetlana w godzinach 10:00-15:00 co najmniej 40 razy.</p><p class="cena">250 zł</p></div></div>
+      <div class="znaczek"><div class="pole"><h3>Informator WGK - cała strona A5</h3><p>Nakład 1000 egzemplarzy dla gości i wystawców oraz wersja elektroniczna na stronie giełdy.</p><p class="cena">220 zł</p></div></div>
+      <div class="znaczek"><div class="pole"><h3>Informator WGK - pół strony A6</h3><p>Ta sama dystrybucja co pełna strona, w mniejszym formacie.</p><p class="cena">120 zł</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec szary" id="regulamin">
+  <div class="wrap dwie-k">
+    <div>
+      <h2>Najważniejsze zasady</h2>
+      <p class="lead" style="margin-top:18px">Skrót regulaminu giełdy. Pełny regulamin każdej edycji jest dostępny przed zgłoszeniem.</p>
+    </div>
+    <div class="reg">
+      <details open><summary>Kto może wystawiać?</summary><p>Ze względu na tematyczny charakter imprezy organizator zastrzega sobie prawo do wyboru wystawców oraz sprzedawanego asortymentu. Miejsce wyznacza organizator w porozumieniu z wystawcą.</p></details>
+      <details><summary>Jak wnosi się opłatę?</summary><p>Opłata za udostępnienie stanowiska handlowego pobierana jest jednorazowo, według cennika. Sprzedaż "z ręki" bez wykupienia stanowiska jest zabroniona.</p></details>
+      <details><summary>Czego nie wolno sprzedawać?</summary><p>Przedmiotów prawnie zakazanych, pochodzących z kradzieży lub o symbolice prawnie zabronionej.</p></details>
+      <details><summary>Reklama i akcje promocyjne</summary><p>Prowadzenie akcji reklamowych na terenie giełdy wymaga wcześniejszej zgody organizatora.</p></details>
+      <details><summary>Akredytacje prasowe</summary><p>Prośbę o akredytację należy przesłać najpóźniej na trzy dni przed imprezą. Akredytacje są imienne.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zgloszenie">
+  <div class="wrap kontakt">
+    <div>
+      <h2>Zgłoszenie wystawcy</h2>
+      <p class="lead" style="margin-top:18px">Wypełnij formularz, a potwierdzimy dostępność miejsca i jego lokalizację na planie. Wolisz porozmawiać? Zadzwoń.</p>
+      <div class="dane">
+        <a class="duzy" href="tel:+48797710197">797 710 197</a>
+        <a class="duzy" href="mailto:gielda@kolekcjonujemy.com" style="font-size:clamp(1.15rem,1rem + .6vw,1.6rem)">gielda@kolekcjonujemy.com</a>
+      </div>
+    </div>
+    <form class="form" style="background:var(--sz)">
+      <label>Imię i nazwisko lub firma<input name="imie" autocomplete="name" required></label>
+      <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      <label class="pel">E-mail<input name="email" type="email" autocomplete="email" required></label>
+      <label>Edycja<select name="edycja"><option>XV - 24 stycznia 2027</option><option>XVI - 18 kwietnia 2027</option><option>XVII - październik 2027</option></select></label>
+      <label>Rodzaj miejsca<select name="miejsce"><option>Stół wystawowy (110 zł)</option><option>Plac wystawowy (160 zł)</option><option>Stoisko targowe (1550 zł)</option></select></label>
+      <label class="pel">Asortyment<input name="asortyment" placeholder="np. monety, banknoty, pocztówki"></label>
+      <label class="pel">Uwagi<textarea name="uwagi" placeholder="Liczba stołów, preferowana strefa, reklama"></textarea></label>
+      <button class="btn" type="submit">Wyślij zgłoszenie</button>
+      <p class="ok pel" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style><footer class="stopka"><div class="wrap">
+<div class="m"><img src="img/logo-w-biale.svg" width="42" height="31" alt=""><span>Warszawska Giełda<br>Kolekcjonerska</span></div>
+<div><h3>Zwiedzający</h3><ul><li><a href="index.html#edycje">Terminy</a></li><li><a href="index.html#wizyta">Bilety i godziny</a></li><li><a href="index.html#asortyment">Asortyment</a></li><li><a href="index.html#dojazd">Dojazd</a></li><li><a href="index.html#galeria">Galeria</a></li></ul></div>
+<div><h3>Wystawcy</h3><ul><li><a href="wystawcy.html#cennik">Cennik</a></li><li><a href="wystawcy.html#plan">Plan hali</a></li><li><a href="wystawcy.html#reklama">Reklama</a></li><li><a href="wystawcy.html#regulamin">Regulamin</a></li><li><a href="wystawcy.html#zgloszenie">Zgłoszenie</a></li></ul></div>
+<div><h3>Kontakt</h3><ul><li><a href="tel:+48797710197">797 710 197</a></li><li><a href="mailto:gielda@kolekcjonujemy.com">gielda@kolekcjonujemy.com</a></li><li><a href="https://www.facebook.com/WarszawskaGieldaKolekcjonerska/" rel="noopener">Facebook</a></li><li>Arena Ursynów, ul. Pileckiego 122</li></ul></div>
+<div class="dol"><span>© 2026 KOLEKCJONUJEMY - Paweł Jankowski</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=kolekcjonujemy.com&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+</div></footer>
+<div class="mob"><a class="btn obw" href="tel:+48797710197">Zadzwoń</a><a class="btn" href="#zgloszenie">Zarezerwuj miejsce</a></div>
+<script>(function(){
+var d=document;
+/* menu mobilne */
+var b=d.querySelector('.burger'),p=d.getElementById('panel');
+if(b&&p){b.addEventListener('click',function(){var o=p.classList.toggle('otw');b.setAttribute('aria-expanded',o);d.body.style.overflow=o?'hidden':''});
+p.addEventListener('click',function(e){if(e.target.closest('a')){p.classList.remove('otw');b.setAttribute('aria-expanded','false');d.body.style.overflow=''}})}
+/* pasek mobilny po przewinieciu za CTA */
+var m=d.querySelector('.mob'),c=d.querySelector('.hero .btn');
+if(m&&c&&'IntersectionObserver'in window){new IntersectionObserver(function(e){var r=e[0];m.classList.toggle('widac',!r.isIntersecting&&r.boundingClientRect.top<0)}).observe(c)}
+/* pasy zdjec: przeciaganie mysza + strzalki */
+d.querySelectorAll('[data-pas]').forEach(function(w){
+ var s=w.querySelector('.pas'),l=w.querySelector('.l'),r=w.querySelector('.r'),dn=false,sx=0,sl=0,mv=0;
+ function st(){if(!l)return;l.disabled=s.scrollLeft<4;r.disabled=s.scrollLeft+s.clientWidth>=s.scrollWidth-4}
+ function krok(k){var a=s.querySelector('a');var g=a?a.getBoundingClientRect().width+parseFloat(getComputedStyle(s).columnGap||16):s.clientWidth;s.scrollBy({left:k*g,behavior:'smooth'})}
+ if(l){l.onclick=function(){krok(-1)};r.onclick=function(){krok(1)}}
+ s.addEventListener('scroll',st,{passive:true});st();addEventListener('resize',st);
+ s.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;mv=0;sx=e.clientX;sl=s.scrollLeft});
+ addEventListener('pointermove',function(e){if(!dn)return;var dx=e.clientX-sx;mv=Math.max(mv,Math.abs(dx));if(mv>5){s.classList.add('ciag');s.scrollLeft=sl-dx}});
+ addEventListener('pointerup',function(){if(!dn)return;dn=false;s.classList.remove('ciag');var a=s.querySelector('a');if(a&&mv>5){var g=a.getBoundingClientRect().width+16;s.scrollTo({left:Math.round(s.scrollLeft/g)*g,behavior:'smooth'})}});
+ s.addEventListener('click',function(e){if(mv>5){e.preventDefault();e.stopImmediatePropagation();mv=0}},true);
+ s.addEventListener('dragstart',function(e){e.preventDefault()});
+});
+/* lightbox */
+var lb,im,pod,lista=[],i=0,t;
+function ikon(p){return '<svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="'+p+'"/></svg>'}
+function buduj(){lb=d.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Powiększone zdjęcie');
+ lb.innerHTML='<img alt=""><div class="pod"></div><button class="zam" aria-label="Zamknij">'+ikon('M6 6l14 14M20 6L6 20')+'</button><button class="pop" aria-label="Poprzednie">'+ikon('M16 5l-8 8 8 8')+'</button><button class="nas" aria-label="Następne">'+ikon('M10 5l8 8-8 8')+'</button>';
+ d.body.appendChild(lb);im=lb.querySelector('img');pod=lb.querySelector('.pod');
+ lb.querySelector('.zam').onclick=zamknij;lb.querySelector('.pop').onclick=function(){idz(-1)};lb.querySelector('.nas').onclick=function(){idz(1)};
+ lb.addEventListener('click',function(e){if(e.target===lb)zamknij()});
+ var x0=null;lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+ lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)idz(dx<0?1:-1);x0=null});
+ d.addEventListener('keydown',function(e){if(!lb.classList.contains('otw'))return;if(e.key==='Escape')zamknij();if(e.key==='ArrowRight')idz(1);if(e.key==='ArrowLeft')idz(-1)});}
+function pokaz(){var a=lista[i],mi=a.querySelector('img');clearTimeout(t);im.src=(mi&&mi.currentSrc)||a.href;im.alt=mi?mi.alt:'';
+ pod.textContent=(a.dataset.pod||(mi&&mi.alt)||'')+'  ·  '+(i+1)+' / '+lista.length;
+ t=setTimeout(function(){var n=new Image();n.onload=function(){if(lista[i]===a)im.src=a.href};n.src=a.href},180);
+ var nx=lista[(i+1)%lista.length];if(nx&&'requestIdleCallback'in window)requestIdleCallback(function(){(new Image()).src=nx.href})}
+function idz(k){i=(i+k+lista.length)%lista.length;pokaz()}
+function zamknij(){lb.classList.remove('otw');d.body.style.overflow=''}
+d.addEventListener('click',function(e){var a=e.target.closest('a[data-lb]');if(!a)return;e.preventDefault();if(!lb)buduj();
+ lista=[].slice.call(d.querySelectorAll('a[data-lb="'+a.dataset.lb+'"]'));i=lista.indexOf(a);pokaz();lb.classList.add('otw');d.body.style.overflow='hidden';lb.querySelector('.zam').focus()});
+/* mapa przy przewinieciu */
+var mp=d.querySelector('.mapa[data-src]');
+if(mp&&'IntersectionObserver'in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){var f=d.createElement('iframe');f.src=mp.dataset.src;f.title='Mapa dojazdu do Areny Ursynów';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';mp.appendChild(f);io.disconnect()}},{rootMargin:'300px'});io.observe(mp)}
+/* formularz pokazowy */
+d.querySelectorAll('form.form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var o=f.querySelector('.ok');if(o)o.textContent='To podgląd strony - formularz nie wysyła jeszcze wiadomości. W docelowej wersji zgłoszenie trafi na gielda@kolekcjonujemy.com.'})});
+})();
+</script>
+</body>
+</html>
